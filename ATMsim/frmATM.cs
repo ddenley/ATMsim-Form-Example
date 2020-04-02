@@ -18,7 +18,10 @@ namespace ATMsim
         int accountAccessed = 0;
         int accountCode;
 
-
+        private void updateAccounts()
+        {
+            form1.updateAccount(accounts);
+        }
 
         //Pin button click events
         private void btnPin3_Click(object sender, EventArgs e)
@@ -352,10 +355,12 @@ namespace ATMsim
 
         String interfaceStage = "Start";
 
-        public frmATM(Account[] val)
+        Form1 form1;
+        public frmATM(Account[] val, Form1 f)
         {
             InitializeComponent();
             accounts = val;
+            form1 = f;
         }
 
         void displayInterface()
@@ -469,6 +474,7 @@ namespace ATMsim
             {
                 if (accounts[accountAccessed].decrementBalance(10) == true)
                 {
+                    updateAccounts();                               
                     interfaceStage = "SuccesfullTransaction";
                     displayInterface();
                 }
@@ -494,6 +500,7 @@ namespace ATMsim
             {
                 if (accounts[accountAccessed].decrementBalance(50) == true)
                 {
+                    updateAccounts();
                     interfaceStage = "SuccesfullTransaction";
                     displayInterface();
                 }
@@ -513,6 +520,7 @@ namespace ATMsim
             {
                 if (accounts[accountAccessed].decrementBalance(100) == true)
                 {
+                    updateAccounts();
                     interfaceStage = "SuccesfullTransaction";
                     displayInterface();
                 }
@@ -549,6 +557,7 @@ namespace ATMsim
                     int amountVal = int.Parse(amountFormatted);
                     if (accounts[accountAccessed].decrementBalance(amountVal) == true)
                     {
+                        updateAccounts();
                         interfaceStage = "SuccesfullTransaction";
                         displayInterface();
                     }

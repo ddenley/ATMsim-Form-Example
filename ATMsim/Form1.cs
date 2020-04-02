@@ -12,8 +12,12 @@ namespace ATMsim
 {
     public partial class Form1 : Form
     {
-        private Account[] ac = new Account[3];
-
+        public Account[] ac = new Account[3];
+        
+        public void updateAccount(Account[] valAC)
+        {
+            ac = valAC;
+        }
 
 
         public Form1()
@@ -23,7 +27,7 @@ namespace ATMsim
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmATM atm = new frmATM(ac);
+            frmATM atm = new frmATM(ac, this);
             atm.Show();
         }
 
