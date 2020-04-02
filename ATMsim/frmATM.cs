@@ -409,7 +409,14 @@ namespace ATMsim
             }
             else if (interfaceStage == "BalanceWithdrawl")
             {
-
+                string balance = (accounts[accountAccessed].getBalance()).ToString();
+                lblOptions.Text = "Your balance is : " + balance + ", select withdrawl amount:";
+                lblOptions.Location = new Point(50, 100);
+                lblOpt1.Text = "10";
+                lblOpt2.Text = "50";
+                lblOpt3.Text = "100";
+                lblOpt3.Location = new Point(460, 190);
+                lblOpt4.Text = "Custom";
             }
             else if (interfaceStage == "SuccesfullTransaction")
             {
@@ -458,7 +465,7 @@ namespace ATMsim
                 displayInterface();
             }
             //Withdrawl 10 pounds from Withdrawl interface
-            else if (interfaceStage == "Withdrawl")
+            else if (interfaceStage == "Withdrawl" || interfaceStage == "BalanceWithdrawl")
             {
                 if (accounts[accountAccessed].decrementBalance(10) == true)
                 {
@@ -483,7 +490,7 @@ namespace ATMsim
                 displayInterface();
             }
             //Withdrawl 50 pounds from Withdrawl interface
-            else if (interfaceStage == "Withdrawl")
+            else if (interfaceStage == "Withdrawl" || interfaceStage == "BalanceWithdrawl")
             {
                 if (accounts[accountAccessed].decrementBalance(50) == true)
                 {
@@ -502,7 +509,7 @@ namespace ATMsim
                 displayInterface();
             }
             //Withdrawl 100 pound from Withdrawl interface
-            else if (interfaceStage == "Withdrawl")
+            else if (interfaceStage == "Withdrawl" || interfaceStage == "BalanceWithdrawl")
             {
                 if (accounts[accountAccessed].decrementBalance(100) == true)
                 {
@@ -520,7 +527,7 @@ namespace ATMsim
                 this.Close();
             }
             //Custom withdrawl option
-            else if (interfaceStage == "Withdrawl")
+            else if (interfaceStage == "Withdrawl" || interfaceStage == "BalanceWithdrawl")
             {
                 interfaceStage = "CustomWithdrawl";
                 displayInterface();
