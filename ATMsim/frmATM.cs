@@ -256,7 +256,7 @@ namespace ATMsim
             //user is at account input stage
             if (interfaceStage == "Start")
             {
-                
+                this.Close();
             }
         }
 
@@ -310,7 +310,13 @@ namespace ATMsim
             }
             else if(interfaceStage == "Withdrawl")
             {
-                
+                lblOptions.Text = "Select deposit amount:";
+                lblOptions.Location = new Point(150, 100);
+                lblOpt1.Text = "10";
+                lblOpt2.Text = "50";
+                lblOpt3.Text = "100";
+                lblOpt3.Location = new Point(460, 190);
+                lblOpt4.Text = "Custom";
             }
             else if (interfaceStage == "Balance")
             {
@@ -378,7 +384,7 @@ namespace ATMsim
             //Exit
             if (interfaceStage == "AccountOptions")
             {
-
+                this.Close();
             }
         }
     }
