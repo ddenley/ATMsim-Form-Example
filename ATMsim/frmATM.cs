@@ -32,12 +32,20 @@ namespace ATMsim
                 lblAccountInput.Text = accountNum;
             }
             //User is inputting pin
-            else if(interfaceStage == "VerifyPin" && accountInputStage != 3)
+            else if (interfaceStage == "VerifyPin" && accountInputStage != 3)
             {
                 accountInputStage++;
                 string pinNum = lblAccountInput.Text;
                 pinNum = replaceAtIndex(accountInputStage, '3', pinNum);
                 lblAccountInput.Text = pinNum;
+            }
+            //User is inputting a custom withdrawl amount
+            else if (interfaceStage == "CustomWithdrawl" && accountInputStage != 3)
+            {
+                accountInputStage++;
+                string pinNum = lblOpt1.Text;
+                pinNum = replaceAtIndex(accountInputStage, '3', pinNum);
+                lblOpt1.Text = pinNum;
             }
         }
 
@@ -59,6 +67,14 @@ namespace ATMsim
                 pinNum = replaceAtIndex(accountInputStage, '4', pinNum);
                 lblAccountInput.Text = pinNum;
             }
+            //User is inputting a custom withdrawl amount
+            else if (interfaceStage == "CustomWithdrawl" && accountInputStage != 3)
+            {
+                accountInputStage++;
+                string pinNum = lblOpt1.Text;
+                pinNum = replaceAtIndex(accountInputStage, '4', pinNum);
+                lblOpt1.Text = pinNum;
+            }
         }
 
         private void btnPin5_Click(object sender, EventArgs e)
@@ -78,6 +94,14 @@ namespace ATMsim
                 string pinNum = lblAccountInput.Text;
                 pinNum = replaceAtIndex(accountInputStage, '5', pinNum);
                 lblAccountInput.Text = pinNum;
+            }
+            //User is inputting a custom withdrawl amount
+            else if (interfaceStage == "CustomWithdrawl" && accountInputStage != 3)
+            {
+                accountInputStage++;
+                string pinNum = lblOpt1.Text;
+                pinNum = replaceAtIndex(accountInputStage, '5', pinNum);
+                lblOpt1.Text = pinNum;
             }
         }
 
@@ -99,6 +123,14 @@ namespace ATMsim
                 pinNum = replaceAtIndex(accountInputStage, '6', pinNum);
                 lblAccountInput.Text = pinNum;
             }
+            //User is inputting a custom withdrawl amount
+            else if (interfaceStage == "CustomWithdrawl" && accountInputStage != 3)
+            {
+                accountInputStage++;
+                string pinNum = lblOpt1.Text;
+                pinNum = replaceAtIndex(accountInputStage, '6', pinNum);
+                lblOpt1.Text = pinNum;
+            }
         }
 
         private void btnPin7_Click(object sender, EventArgs e)
@@ -118,6 +150,14 @@ namespace ATMsim
                 string pinNum = lblAccountInput.Text;
                 pinNum = replaceAtIndex(accountInputStage, '7', pinNum);
                 lblAccountInput.Text = pinNum;
+            }
+            //User is inputting a custom withdrawl amount
+            else if (interfaceStage == "CustomWithdrawl" && accountInputStage != 3)
+            {
+                accountInputStage++;
+                string pinNum = lblOpt1.Text;
+                pinNum = replaceAtIndex(accountInputStage, '7', pinNum);
+                lblOpt1.Text = pinNum;
             }
         }
 
@@ -139,6 +179,14 @@ namespace ATMsim
                 pinNum = replaceAtIndex(accountInputStage, '8', pinNum);
                 lblAccountInput.Text = pinNum;
             }
+            //User is inputting a custom withdrawl amount
+            else if (interfaceStage == "CustomWithdrawl" && accountInputStage != 3)
+            {
+                accountInputStage++;
+                string pinNum = lblOpt1.Text;
+                pinNum = replaceAtIndex(accountInputStage, '8', pinNum);
+                lblOpt1.Text = pinNum;
+            }
         }
 
         private void btnPin9_Click(object sender, EventArgs e)
@@ -158,6 +206,14 @@ namespace ATMsim
                 string pinNum = lblAccountInput.Text;
                 pinNum = replaceAtIndex(accountInputStage, '9', pinNum);
                 lblAccountInput.Text = pinNum;
+            }
+            //User is inputting a custom withdrawl amount
+            else if (interfaceStage == "CustomWithdrawl" && accountInputStage != 3)
+            {
+                accountInputStage++;
+                string pinNum = lblOpt1.Text;
+                pinNum = replaceAtIndex(accountInputStage, '9', pinNum);
+                lblOpt1.Text = pinNum;
             }
         }
 
@@ -179,6 +235,14 @@ namespace ATMsim
                 pinNum = replaceAtIndex(accountInputStage, '2', pinNum);
                 lblAccountInput.Text = pinNum;
             }
+            //User is inputting a custom withdrawl amount
+            else if (interfaceStage == "CustomWithdrawl" && accountInputStage != 3)
+            {
+                accountInputStage++;
+                string pinNum = lblOpt1.Text;
+                pinNum = replaceAtIndex(accountInputStage, '2', pinNum);
+                lblOpt1.Text = pinNum;
+            }
         }
 
         private void btnPin1_Click(object sender, EventArgs e)
@@ -198,6 +262,14 @@ namespace ATMsim
                 string pinNum = lblAccountInput.Text;
                 pinNum = replaceAtIndex(accountInputStage, '1', pinNum);
                 lblAccountInput.Text = pinNum;
+            }
+            //User is inputting a custom withdrawl amount
+            else if (interfaceStage == "CustomWithdrawl" && accountInputStage != 3)
+            {
+                accountInputStage++;
+                string pinNum = lblOpt1.Text;
+                pinNum = replaceAtIndex(accountInputStage, '1', pinNum);
+                lblOpt1.Text = pinNum;
             }
         }
 
@@ -249,6 +321,12 @@ namespace ATMsim
                 accountInputStage = -1;
                 lblAccountInput.Text = "****";
             }
+            //user is at custom withdraawl stage
+            if (interfaceStage == "CustomWithdrawl")
+            {
+                accountInputStage = -1;
+                lblOpt1.Text = "____";
+            }
         }
 
         private void btnPinCancel_Click(object sender, EventArgs e)
@@ -296,6 +374,7 @@ namespace ATMsim
                 //Make labels for options menu visible
                 lblOptions.Visible = true;
                 lblOpt1.Visible = true;
+                lblOpt1.Location = new Point(30, 190);
                 lblOpt2.Visible = true;
                 lblOpt3.Visible = true;
                 lblOpt4.Visible = true;
@@ -339,6 +418,19 @@ namespace ATMsim
                 lblOpt3.Visible = false;
                 lblOpt2.Text = "Back";
                 lblOpt4.Text = "Exit";
+            }
+            else if (interfaceStage == "CustomWithdrawl")
+            {
+                accountInputStage = -1;
+
+                lblOptions.Text = "Input amount to withdrawl:";
+                lblOptions.Location = new Point(130, 60);
+                lblOpt1.Text = "____";
+                lblOpt1.Location = new Point(240, 90);
+
+                lblOpt3.Visible = false;
+                lblOpt2.Text = "Back";
+                lblOpt4.Text = "Confirm";
             }
         }
 
@@ -384,11 +476,20 @@ namespace ATMsim
                 interfaceStage = "Balance";
                 displayInterface();
             }
-            //Back from sucesfull transaction
-            else if (interfaceStage == "SuccesfullTransaction")
+            //Back to options display
+            else if (interfaceStage == "SuccesfullTransaction" || interfaceStage == "CustomWithdrawl")
             {
                 interfaceStage = "AccountOptions";
                 displayInterface();
+            }
+            //Withdrawl 50 pounds from Withdrawl interface
+            else if (interfaceStage == "Withdrawl")
+            {
+                if (accounts[accountAccessed].decrementBalance(50) == true)
+                {
+                    interfaceStage = "SuccesfullTransaction";
+                    displayInterface();
+                }
             }
         }
 
@@ -400,6 +501,15 @@ namespace ATMsim
                 interfaceStage = "BalanceWithdrawl";
                 displayInterface();
             }
+            //Withdrawl 100 pound from Withdrawl interface
+            else if (interfaceStage == "Withdrawl")
+            {
+                if (accounts[accountAccessed].decrementBalance(100) == true)
+                {
+                    interfaceStage = "SuccesfullTransaction";
+                    displayInterface();
+                }
+            }
         }
 
         private void btnOpt4_Click(object sender, EventArgs e)
@@ -408,6 +518,35 @@ namespace ATMsim
             if (interfaceStage == "AccountOptions" || interfaceStage == "SuccesfullTransaction")
             {
                 this.Close();
+            }
+            //Custom withdrawl option
+            else if (interfaceStage == "Withdrawl")
+            {
+                interfaceStage = "CustomWithdrawl";
+                displayInterface();
+            }
+            //Custom withdrawl confirm
+            else if (interfaceStage == "CustomWithdrawl")
+            {
+                string amount = lblOpt1.Text;
+                string amountFormatted = "";
+                for (int i = 0; i < amount.Length; i++)
+                {
+                    if (Char.IsDigit(amount[i]))
+                    {
+                        amountFormatted = amountFormatted + amount[i];
+                    }
+                }
+                if (accountInputStage > 0)
+                {
+                    int amountVal = int.Parse(amountFormatted);
+                    if (accounts[accountAccessed].decrementBalance(amountVal) == true)
+                    {
+                        interfaceStage = "SuccesfullTransaction";
+                        displayInterface();
+                    }
+                }
+
             }
         }
     }
