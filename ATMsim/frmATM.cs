@@ -332,6 +332,14 @@ namespace ATMsim
             {
 
             }
+            else if (interfaceStage == "SuccesfullTransaction")
+            {
+                lblOptions.Text = "Succesfull Transaction";
+                lblOpt1.Visible = false;
+                lblOpt3.Visible = false;
+                lblOpt2.Text = "Back";
+                lblOpt4.Text = "Exit";
+            }
         }
 
         //Method for replacing at index of string 
@@ -352,10 +360,19 @@ namespace ATMsim
                 displayInterface();
             }
             //Back to menu from withdrawl
-            if (interfaceStage == "Balance")
+            else if (interfaceStage == "Balance")
             {
                 interfaceStage = "AccountOptions";
                 displayInterface();
+            }
+            //Withdrawl 10 pounds from Withdrawl interface
+            else if (interfaceStage == "Withdrawl")
+            {
+                if (accounts[accountAccessed].decrementBalance(10) == true)
+                {
+                    interfaceStage = "SuccesfullTransaction";
+                    displayInterface();
+                }
             }
         }
 
@@ -365,6 +382,12 @@ namespace ATMsim
             if (interfaceStage == "AccountOptions")
             {
                 interfaceStage = "Balance";
+                displayInterface();
+            }
+            //Back from sucesfull transaction
+            else if (interfaceStage == "SuccesfullTransaction")
+            {
+                interfaceStage = "AccountOptions";
                 displayInterface();
             }
         }
@@ -382,7 +405,7 @@ namespace ATMsim
         private void btnOpt4_Click(object sender, EventArgs e)
         {
             //Exit
-            if (interfaceStage == "AccountOptions")
+            if (interfaceStage == "AccountOptions" || interfaceStage == "SuccesfullTransaction")
             {
                 this.Close();
             }
