@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,6 +14,7 @@ namespace ATMsim
     public partial class frmATM : Form
     {
         int accountInputStage = -1;
+        private Thread atm_T;
         //Account access
         private Account[] accounts;
         int accountAccessed = 0;
@@ -350,7 +352,8 @@ namespace ATMsim
 
         private void frmATM_Load(object sender, EventArgs e)
         {
-            displayInterface();
+            ThreadStart atm = new ThreadStart(displayInterface);
+            atm_T = new Thread(atm);
             lblOptions.Visible = false;
             lblOpt1.Visible = false;
             lblOpt2.Visible = false;
