@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
+            this.btnMainBank = new System.Windows.Forms.Button();
+            this.btnDataRace = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -41,11 +43,33 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnMainBank
+            // 
+            this.btnMainBank.Location = new System.Drawing.Point(268, 74);
+            this.btnMainBank.Name = "btnMainBank";
+            this.btnMainBank.Size = new System.Drawing.Size(99, 38);
+            this.btnMainBank.TabIndex = 1;
+            this.btnMainBank.Text = "Main Bank";
+            this.btnMainBank.UseVisualStyleBackColor = true;
+            this.btnMainBank.Click += new System.EventHandler(this.btnMainBank_Click);
+            // 
+            // btnDataRace
+            // 
+            this.btnDataRace.Location = new System.Drawing.Point(574, 74);
+            this.btnDataRace.Name = "btnDataRace";
+            this.btnDataRace.Size = new System.Drawing.Size(150, 38);
+            this.btnDataRace.TabIndex = 2;
+            this.btnDataRace.Text = "Data Race: On";
+            this.btnDataRace.UseVisualStyleBackColor = true;
+            this.btnDataRace.Click += new System.EventHandler(this.btnDataRace_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDataRace);
+            this.Controls.Add(this.btnMainBank);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -57,6 +81,8 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnMainBank;
+        private System.Windows.Forms.Button btnDataRace;
     }
 }
 

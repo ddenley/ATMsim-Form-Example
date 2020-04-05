@@ -58,6 +58,12 @@
     <Compile Include="frmATM.Designer.cs">
       <DependentUpon>frmATM.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMainBank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainBank.Designer.cs">
+      <DependentUpon>frmMainBank.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

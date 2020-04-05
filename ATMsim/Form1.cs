@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ATMsim
@@ -13,7 +14,11 @@ namespace ATMsim
     public partial class Form1 : Form
     {
         public Account[] ac = new Account[3];
-        
+        frmMainBank mainBank = new frmMainBank();
+
+        bool dataRace = true;
+
+
         public void updateAccount(Account[] valAC)
         {
             ac = valAC;
@@ -52,6 +57,25 @@ namespace ATMsim
         private void Form1_Load(object sender, EventArgs e)
         {
             Program();
+        }
+
+        private void btnMainBank_Click(object sender, EventArgs e)
+        {
+            mainBank.Show();
+        }
+
+        private void btnDataRace_Click(object sender, EventArgs e)
+        {
+            if (dataRace == true)
+            {
+                dataRace = false;
+                btnDataRace.Text = "Data Race: Off";
+            }
+            else if (dataRace == false)
+            {
+                dataRace = true;
+                btnDataRace.Text = "Data Race: On";
+            }
         }
     }
 
