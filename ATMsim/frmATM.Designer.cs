@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblOptions = new System.Windows.Forms.Label();
+            this.lblOpt4 = new System.Windows.Forms.Label();
+            this.lblOpt2 = new System.Windows.Forms.Label();
+            this.lblOpt3 = new System.Windows.Forms.Label();
+            this.lblOpt1 = new System.Windows.Forms.Label();
             this.lblAccountInput = new System.Windows.Forms.Label();
             this.lblInitialnput = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -48,11 +53,6 @@
             this.btnPinEnter = new System.Windows.Forms.Button();
             this.btnPinClear = new System.Windows.Forms.Button();
             this.btnPinCancel = new System.Windows.Forms.Button();
-            this.lblOpt1 = new System.Windows.Forms.Label();
-            this.lblOpt3 = new System.Windows.Forms.Label();
-            this.lblOpt2 = new System.Windows.Forms.Label();
-            this.lblOpt4 = new System.Windows.Forms.Label();
-            this.lblOptions = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -72,27 +72,88 @@
             this.panel1.Size = new System.Drawing.Size(533, 386);
             this.panel1.TabIndex = 0;
             // 
+            // lblOptions
+            // 
+            this.lblOptions.AutoSize = true;
+            this.lblOptions.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOptions.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblOptions.Location = new System.Drawing.Point(202, 129);
+            this.lblOptions.Name = "lblOptions";
+            this.lblOptions.Size = new System.Drawing.Size(109, 26);
+            this.lblOptions.TabIndex = 6;
+            this.lblOptions.Text = "lblOptions";
+            this.lblOptions.Visible = false;
+            // 
+            // lblOpt4
+            // 
+            this.lblOpt4.AutoSize = true;
+            this.lblOpt4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOpt4.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblOpt4.Location = new System.Drawing.Point(431, 309);
+            this.lblOpt4.Name = "lblOpt4";
+            this.lblOpt4.Size = new System.Drawing.Size(81, 26);
+            this.lblOpt4.TabIndex = 5;
+            this.lblOpt4.Text = "lblOpt4";
+            this.lblOpt4.Visible = false;
+            // 
+            // lblOpt2
+            // 
+            this.lblOpt2.AutoSize = true;
+            this.lblOpt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOpt2.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblOpt2.Location = new System.Drawing.Point(26, 309);
+            this.lblOpt2.Name = "lblOpt2";
+            this.lblOpt2.Size = new System.Drawing.Size(81, 26);
+            this.lblOpt2.TabIndex = 4;
+            this.lblOpt2.Text = "lblOpt2";
+            this.lblOpt2.Visible = false;
+            // 
+            // lblOpt3
+            // 
+            this.lblOpt3.AutoSize = true;
+            this.lblOpt3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOpt3.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblOpt3.Location = new System.Drawing.Point(431, 190);
+            this.lblOpt3.Name = "lblOpt3";
+            this.lblOpt3.Size = new System.Drawing.Size(81, 26);
+            this.lblOpt3.TabIndex = 3;
+            this.lblOpt3.Text = "lblOpt3";
+            this.lblOpt3.Visible = false;
+            // 
+            // lblOpt1
+            // 
+            this.lblOpt1.AutoSize = true;
+            this.lblOpt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOpt1.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblOpt1.Location = new System.Drawing.Point(26, 190);
+            this.lblOpt1.Name = "lblOpt1";
+            this.lblOpt1.Size = new System.Drawing.Size(81, 26);
+            this.lblOpt1.TabIndex = 2;
+            this.lblOpt1.Text = "lblOpt1";
+            this.lblOpt1.Visible = false;
+            // 
             // lblAccountInput
             // 
             this.lblAccountInput.AutoSize = true;
             this.lblAccountInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAccountInput.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblAccountInput.Location = new System.Drawing.Point(202, 17);
+            this.lblAccountInput.Location = new System.Drawing.Point(182, 102);
             this.lblAccountInput.Name = "lblAccountInput";
-            this.lblAccountInput.Size = new System.Drawing.Size(161, 26);
+            this.lblAccountInput.Size = new System.Drawing.Size(66, 26);
             this.lblAccountInput.TabIndex = 1;
-            this.lblAccountInput.Text = "lblAccountInput";
+            this.lblAccountInput.Text = "******";
+            this.lblAccountInput.Click += new System.EventHandler(this.lblAccountInput_Click);
             // 
             // lblInitialnput
             // 
             this.lblInitialnput.AutoSize = true;
             this.lblInitialnput.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInitialnput.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblInitialnput.Location = new System.Drawing.Point(15, 17);
+            this.lblInitialnput.Location = new System.Drawing.Point(110, 36);
             this.lblInitialnput.Name = "lblInitialnput";
-            this.lblInitialnput.Size = new System.Drawing.Size(133, 26);
+            this.lblInitialnput.Size = new System.Drawing.Size(344, 26);
             this.lblInitialnput.TabIndex = 0;
-            this.lblInitialnput.Text = "lblInitialInput";
+            this.lblInitialnput.Text = "Please enter your account number";
             // 
             // panel2
             // 
@@ -267,61 +328,6 @@
             this.btnPinCancel.Text = "Cancel";
             this.btnPinCancel.UseVisualStyleBackColor = true;
             this.btnPinCancel.Click += new System.EventHandler(this.btnPinCancel_Click);
-            // 
-            // lblOpt1
-            // 
-            this.lblOpt1.AutoSize = true;
-            this.lblOpt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOpt1.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblOpt1.Location = new System.Drawing.Point(26, 190);
-            this.lblOpt1.Name = "lblOpt1";
-            this.lblOpt1.Size = new System.Drawing.Size(81, 26);
-            this.lblOpt1.TabIndex = 2;
-            this.lblOpt1.Text = "lblOpt1";
-            // 
-            // lblOpt3
-            // 
-            this.lblOpt3.AutoSize = true;
-            this.lblOpt3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOpt3.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblOpt3.Location = new System.Drawing.Point(431, 190);
-            this.lblOpt3.Name = "lblOpt3";
-            this.lblOpt3.Size = new System.Drawing.Size(81, 26);
-            this.lblOpt3.TabIndex = 3;
-            this.lblOpt3.Text = "lblOpt3";
-            // 
-            // lblOpt2
-            // 
-            this.lblOpt2.AutoSize = true;
-            this.lblOpt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOpt2.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblOpt2.Location = new System.Drawing.Point(26, 309);
-            this.lblOpt2.Name = "lblOpt2";
-            this.lblOpt2.Size = new System.Drawing.Size(81, 26);
-            this.lblOpt2.TabIndex = 4;
-            this.lblOpt2.Text = "lblOpt2";
-            // 
-            // lblOpt4
-            // 
-            this.lblOpt4.AutoSize = true;
-            this.lblOpt4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOpt4.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblOpt4.Location = new System.Drawing.Point(431, 309);
-            this.lblOpt4.Name = "lblOpt4";
-            this.lblOpt4.Size = new System.Drawing.Size(81, 26);
-            this.lblOpt4.TabIndex = 5;
-            this.lblOpt4.Text = "lblOpt4";
-            // 
-            // lblOptions
-            // 
-            this.lblOptions.AutoSize = true;
-            this.lblOptions.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOptions.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblOptions.Location = new System.Drawing.Point(202, 102);
-            this.lblOptions.Name = "lblOptions";
-            this.lblOptions.Size = new System.Drawing.Size(109, 26);
-            this.lblOptions.TabIndex = 6;
-            this.lblOptions.Text = "lblOptions";
             // 
             // frmATM
             // 
