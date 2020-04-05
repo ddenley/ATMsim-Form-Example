@@ -72,6 +72,9 @@
     <EmbeddedResource Include="frmATM.resx">
       <DependentUpon>frmATM.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMainBank.resx">
+      <DependentUpon>frmMainBank.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
