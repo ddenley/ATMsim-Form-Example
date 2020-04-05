@@ -575,5 +575,10 @@ namespace ATMsim
 
             }
         }
+
+        private void lblAccountInput_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
