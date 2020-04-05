@@ -370,6 +370,7 @@ namespace ATMsim
 
         void displayInterface()
         {
+            //Update local account for updated balances
             updateLocalAccount();
             if (interfaceStage == "Start")
             {
