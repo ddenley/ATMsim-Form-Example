@@ -19,6 +19,11 @@ namespace ATMsim
             ac = valAC;
         }
 
+        public Account[] getAccounts()
+        {
+            return ac;
+        }
+
 
         public Form1()
         {

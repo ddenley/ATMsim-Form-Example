@@ -23,6 +23,11 @@ namespace ATMsim
             form1.updateAccount(accounts);
         }
 
+        private void updateLocalAccount()
+        {
+            accounts = form1.getAccounts();
+        }
+
         //Pin button click events
         private void btnPin3_Click(object sender, EventArgs e)
         {
@@ -365,6 +370,7 @@ namespace ATMsim
 
         void displayInterface()
         {
+            updateLocalAccount();
             if (interfaceStage == "Start")
             {
                 lblInitialnput.Text = "Please enter your account number:";
