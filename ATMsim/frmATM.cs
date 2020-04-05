@@ -15,10 +15,21 @@ namespace ATMsim
     {
         int accountInputStage = -1;
         private Thread atm_T;
+        private bool semaphore = true;
         //Account access
         private Account[] accounts;
         int accountAccessed = 0;
         int accountCode;
+
+        public void setSemaphore(bool sem)
+        {
+            this.semaphore = sem;
+        }
+
+        public bool getSemaphore()
+        {
+            return this.semaphore;
+        }
 
         private void updateAccounts()
         {
