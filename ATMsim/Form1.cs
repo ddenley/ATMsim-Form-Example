@@ -16,7 +16,7 @@ namespace ATMsim
         public Account[] ac = new Account[3];
         frmMainBank mainBank = new frmMainBank();
 
-        bool dataRace = true;
+        bool dataRace = false;
 
 
         public void updateAccount(Account[] valAC)
@@ -38,6 +38,7 @@ namespace ATMsim
         private void button1_Click(object sender, EventArgs e)
         {
             frmATM atm = new frmATM(ac, this);
+            atm.setSemaphore(dataRace);
             atm.Show();
         }
 
