@@ -40,6 +40,15 @@
             this.txtEditPin = new System.Windows.Forms.TextBox();
             this.btnEditSearchAcc = new System.Windows.Forms.Button();
             this.btnEditUpdate = new System.Windows.Forms.Button();
+            this.lblAddAccNum = new System.Windows.Forms.Label();
+            this.lblAddAccBal = new System.Windows.Forms.Label();
+            this.lblAddPin = new System.Windows.Forms.Label();
+            this.txtAddAccNum = new System.Windows.Forms.TextBox();
+            this.txtAddBal = new System.Windows.Forms.TextBox();
+            this.txtAddPin = new System.Windows.Forms.TextBox();
+            this.btnAddAcc = new System.Windows.Forms.Button();
+            this.txtAccDel = new System.Windows.Forms.TextBox();
+            this.btnDelAcc = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblEditHeader
@@ -54,7 +63,7 @@
             // lblAddHeader
             // 
             this.lblAddHeader.AutoSize = true;
-            this.lblAddHeader.Location = new System.Drawing.Point(74, 183);
+            this.lblAddHeader.Location = new System.Drawing.Point(74, 175);
             this.lblAddHeader.Name = "lblAddHeader";
             this.lblAddHeader.Size = new System.Drawing.Size(72, 13);
             this.lblAddHeader.TabIndex = 1;
@@ -152,11 +161,102 @@
             this.btnEditUpdate.UseVisualStyleBackColor = true;
             this.btnEditUpdate.Click += new System.EventHandler(this.btnEditUpdate_Click);
             // 
+            // lblAddAccNum
+            // 
+            this.lblAddAccNum.AutoSize = true;
+            this.lblAddAccNum.Location = new System.Drawing.Point(74, 215);
+            this.lblAddAccNum.Name = "lblAddAccNum";
+            this.lblAddAccNum.Size = new System.Drawing.Size(90, 13);
+            this.lblAddAccNum.TabIndex = 12;
+            this.lblAddAccNum.Text = "Account Number:";
+            // 
+            // lblAddAccBal
+            // 
+            this.lblAddAccBal.AutoSize = true;
+            this.lblAddAccBal.Location = new System.Drawing.Point(74, 255);
+            this.lblAddAccBal.Name = "lblAddAccBal";
+            this.lblAddAccBal.Size = new System.Drawing.Size(49, 13);
+            this.lblAddAccBal.TabIndex = 13;
+            this.lblAddAccBal.Text = "Balance:";
+            // 
+            // lblAddPin
+            // 
+            this.lblAddPin.AutoSize = true;
+            this.lblAddPin.Location = new System.Drawing.Point(74, 292);
+            this.lblAddPin.Name = "lblAddPin";
+            this.lblAddPin.Size = new System.Drawing.Size(25, 13);
+            this.lblAddPin.TabIndex = 14;
+            this.lblAddPin.Text = "Pin:";
+            // 
+            // txtAddAccNum
+            // 
+            this.txtAddAccNum.Location = new System.Drawing.Point(211, 212);
+            this.txtAddAccNum.MaxLength = 6;
+            this.txtAddAccNum.Name = "txtAddAccNum";
+            this.txtAddAccNum.Size = new System.Drawing.Size(100, 20);
+            this.txtAddAccNum.TabIndex = 15;
+            this.txtAddAccNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAddAccNum_KeyPress);
+            // 
+            // txtAddBal
+            // 
+            this.txtAddBal.Location = new System.Drawing.Point(211, 255);
+            this.txtAddBal.Name = "txtAddBal";
+            this.txtAddBal.Size = new System.Drawing.Size(100, 20);
+            this.txtAddBal.TabIndex = 16;
+            this.txtAddBal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAddBal_KeyPress);
+            // 
+            // txtAddPin
+            // 
+            this.txtAddPin.Location = new System.Drawing.Point(211, 292);
+            this.txtAddPin.MaxLength = 4;
+            this.txtAddPin.Name = "txtAddPin";
+            this.txtAddPin.Size = new System.Drawing.Size(100, 20);
+            this.txtAddPin.TabIndex = 17;
+            this.txtAddPin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAddPin_KeyPress);
+            // 
+            // btnAddAcc
+            // 
+            this.btnAddAcc.Location = new System.Drawing.Point(328, 289);
+            this.btnAddAcc.Name = "btnAddAcc";
+            this.btnAddAcc.Size = new System.Drawing.Size(105, 23);
+            this.btnAddAcc.TabIndex = 18;
+            this.btnAddAcc.Text = "Add Account";
+            this.btnAddAcc.UseVisualStyleBackColor = true;
+            this.btnAddAcc.Click += new System.EventHandler(this.btnAddAcc_Click);
+            // 
+            // txtAccDel
+            // 
+            this.txtAccDel.Location = new System.Drawing.Point(211, 331);
+            this.txtAccDel.MaxLength = 6;
+            this.txtAccDel.Name = "txtAccDel";
+            this.txtAccDel.Size = new System.Drawing.Size(100, 20);
+            this.txtAccDel.TabIndex = 19;
+            this.txtAccDel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAccDel_KeyPress);
+            // 
+            // btnDelAcc
+            // 
+            this.btnDelAcc.Location = new System.Drawing.Point(328, 329);
+            this.btnDelAcc.Name = "btnDelAcc";
+            this.btnDelAcc.Size = new System.Drawing.Size(105, 23);
+            this.btnDelAcc.TabIndex = 20;
+            this.btnDelAcc.Text = "Delete Account";
+            this.btnDelAcc.UseVisualStyleBackColor = true;
+            this.btnDelAcc.Click += new System.EventHandler(this.btnDelAcc_Click);
+            // 
             // frmMainBank
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDelAcc);
+            this.Controls.Add(this.txtAccDel);
+            this.Controls.Add(this.btnAddAcc);
+            this.Controls.Add(this.txtAddPin);
+            this.Controls.Add(this.txtAddBal);
+            this.Controls.Add(this.txtAddAccNum);
+            this.Controls.Add(this.lblAddPin);
+            this.Controls.Add(this.lblAddAccBal);
+            this.Controls.Add(this.lblAddAccNum);
             this.Controls.Add(this.btnEditUpdate);
             this.Controls.Add(this.btnEditSearchAcc);
             this.Controls.Add(this.txtEditPin);
@@ -191,5 +291,14 @@
         private System.Windows.Forms.TextBox txtEditPin;
         private System.Windows.Forms.Button btnEditSearchAcc;
         private System.Windows.Forms.Button btnEditUpdate;
+        private System.Windows.Forms.Label lblAddAccNum;
+        private System.Windows.Forms.Label lblAddAccBal;
+        private System.Windows.Forms.Label lblAddPin;
+        private System.Windows.Forms.TextBox txtAddAccNum;
+        private System.Windows.Forms.TextBox txtAddBal;
+        private System.Windows.Forms.TextBox txtAddPin;
+        private System.Windows.Forms.Button btnAddAcc;
+        private System.Windows.Forms.TextBox txtAccDel;
+        private System.Windows.Forms.Button btnDelAcc;
     }
 }

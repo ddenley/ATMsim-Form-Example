@@ -117,6 +117,11 @@ namespace ATMsim
         {
             this.pin = newBalance;
         }
+        //Set account number - used for deletion function
+        public void setAccNum(int newAccNum)
+        {
+            this.accountNum = newAccNum;
+        }
 
         /*
          *   This funciton allows us to decrement the balance of an account
