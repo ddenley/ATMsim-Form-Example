@@ -14,9 +14,18 @@ namespace ATMsim
     public partial class Form1 : Form
     {
         public Account[] ac = new Account[3];
+        public Account demoac = new Account(350, 1111, 111111);
         frmMainBank mainBank;
+        Thread atmThread;
+        public bool inProgress = false;
 
-        bool dataRace = false;
+        bool dataRace = true;
+
+        //Dan attempts
+        //Declare worker thread
+        private Thread workerThread = null;
+        //Boolean flag used to stop
+        private bool stopProcess = false;
 
 
         public void updateAccount(Account[] valAC)
@@ -29,6 +38,16 @@ namespace ATMsim
             return ac;
         }
 
+        public Account getDemoAccount()
+        {
+            return demoac;
+        }
+
+        public void setDemoAccount(Account account)
+        {
+            this.demoac = account;
+        }
+
 
         public Form1()
         {
@@ -37,9 +56,36 @@ namespace ATMsim
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //ThreadStart atmStart = new ThreadStart(createATM);
+            //atmThread = new Thread(atmStart);
+            //atmThread.Start();
+
+            //frmATM atm = new frmATM(ac, this);
+            //atm.setSemaphore(!dataRace);
+            //ThreadStart atmStart = new ThreadStart(atm.Show);
+            //atmThread = new Thread(atmStart);
+            //atmThread.Start();
+            //createATM();
+
+            this.stopProcess = false;
+            //Initialise atm instance thread
+            this.workerThread = new Thread(new ThreadStart(this.atmInstances));
+            this.workerThread.Start();
+        }
+
+        private void createATM()
+        {
             frmATM atm = new frmATM(ac, this);
-            atm.setSemaphore(dataRace);
+            atm.setSemaphore(!dataRace);
             atm.Show();
+
+        }
+
+        private void atmInstances()
+        {
+            frmATM atm = new frmATM(ac, this);
+            atm.setSemaphore(!dataRace);
+            atm.ShowDialog();
         }
 
         /*
@@ -50,7 +96,7 @@ namespace ATMsim
         public void Program()
         {
             ac[0] = new Account(300, 1111, 111111);
-            ac[1] = new Account(750, 2222, 222222);
+            ac[1] = new Account(450, 2222, 222222);
             ac[2] = new Account(3000, 3333, 333333);
 
         }
@@ -68,14 +114,14 @@ namespace ATMsim
 
         private void btnDataRace_Click(object sender, EventArgs e)
         {
-            if (dataRace == true)
+            if (this.dataRace == true)
             {
-                dataRace = false;
+                this.dataRace = false;
                 btnDataRace.Text = "Data Race: Off";
             }
-            else if (dataRace == false)
+            else if (this.dataRace == false)
             {
-                dataRace = true;
+                this.dataRace = true;
                 btnDataRace.Text = "Data Race: On";
             }
         }
