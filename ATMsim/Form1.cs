@@ -14,7 +14,7 @@ namespace ATMsim
     public partial class Form1 : Form
     {
         public Account[] ac = new Account[3];
-        frmMainBank mainBank = new frmMainBank();
+        frmMainBank mainBank;
 
         bool dataRace = false;
 
@@ -62,6 +62,7 @@ namespace ATMsim
 
         private void btnMainBank_Click(object sender, EventArgs e)
         {
+            mainBank = new frmMainBank(this);
             mainBank.Show();
         }
 
@@ -106,6 +107,20 @@ namespace ATMsim
         public void setBalance(int newBalance)
         {
             this.balance = newBalance;
+        }
+        //getter and setter for pin
+        public int getPin()
+        {
+            return pin;
+        }
+        public void setPin(int newBalance)
+        {
+            this.pin = newBalance;
+        }
+        //Set account number - used for deletion function
+        public void setAccNum(int newAccNum)
+        {
+            this.accountNum = newAccNum;
         }
 
         /*
