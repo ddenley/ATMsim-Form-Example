@@ -14,12 +14,23 @@ namespace ATMsim
     public partial class frmATM : Form
     {
         int accountInputStage = -1;
-        private Thread atm_T;
         private bool semaphore = true;
+        private Thread atm_T;
         //Account access
         private Account[] accounts;
+        private Account demoAccount;
         int accountAccessed = 0;
         int accountCode;
+
+        public void setDemoAccount(Account account)
+        {
+            this.demoAccount = account;
+        }
+
+        public Account getDemoAccount()
+        {
+            return this.demoAccount;
+        }
 
         public void setSemaphore(bool sem)
         {
@@ -33,12 +44,15 @@ namespace ATMsim
 
         private void updateAccounts()
         {
-            form1.updateAccount(accounts);
+            form1.updateAccount(accounts);            
         }
 
         private void updateLocalAccount()
         {
+            
             accounts = form1.getAccounts();
+            
+            
         }
 
         //Pin button click events
@@ -363,13 +377,13 @@ namespace ATMsim
 
         private void frmATM_Load(object sender, EventArgs e)
         {
-            ThreadStart atm = new ThreadStart(displayInterface);
-            atm_T = new Thread(atm);
+            displayInterface();
             lblOptions.Visible = false;
             lblOpt1.Visible = false;
             lblOpt2.Visible = false;
             lblOpt3.Visible = false;
             lblOpt4.Visible = false;
+            
         }
 
         String interfaceStage = "Start";
@@ -493,12 +507,14 @@ namespace ATMsim
             //Withdrawl 10 pounds from Withdrawl interface
             else if (interfaceStage == "Withdrawl" || interfaceStage == "BalanceWithdrawl")
             {
+               
                 if (accounts[accountAccessed].decrementBalance(10) == true)
                 {
-                    updateAccounts();                               
+                    updateAccounts();
                     interfaceStage = "SuccesfullTransaction";
                     displayInterface();
                 }
+                
             }
         }
 
